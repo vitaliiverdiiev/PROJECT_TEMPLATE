@@ -1,0 +1,27 @@
+// screen sizes
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+
+// container
+$container-padding: 30px;
+// the following line added left and right padding into a count
+// $max-width: calc(#{$xxl} + calc(#{$container-padding} * 2));
+$max-width: $xxl;
+
+// burger
+$burger-size: 50px;
+$burger-color: #1b262c;
+
+// fonts
+$primary-font: "Open Sans", sans-serif;
+$secondary-font: serif;
+$font-size: 14px;
+$line-height: 1.5;
+
+// color
+$primary-color: #1b262c;
+$secondary-color: #1a1a1a;

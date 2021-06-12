@@ -1,0 +1,47 @@
+@media screen and (max-width: 768px) {
+	body {
+		background-color: lightgrey;
+		// overflow-x: hidden;
+	}
+	
+	.nav {
+
+		&__items {
+			background-color: #fff;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			right: 0;
+			bottom: 0;
+			overflow-y: scroll;
+
+			flex-direction: column;
+			padding-top: 20vh;
+			transform: translateY(-50%);
+			transition: transform .8s ease 0s;
+			transform: translateX(150%);
+
+			&._active {
+				transform: translateX(0);
+			}
+		}
+
+		&__item {
+			// margin-top: 50%;
+		}
+
+		&__link {
+			text-align: right;
+			padding: 2rem 3rem;
+		}
+
+		.logo {
+			&__image {
+			}
+		}
+
+		.burger {
+			display: block;
+		}
+	}
+}

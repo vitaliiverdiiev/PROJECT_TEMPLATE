@@ -11,6 +11,7 @@ const minify = require('gulp-minify');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const fileinclude = require('gulp-file-include');
+const htmlmin = require('gulp-htmlmin');
 
 // ********** F U N C T I O N S ********** //
 function swallowError(error) {
@@ -27,7 +28,8 @@ const isSync = process.argv.includes('--sync');
 // ********** P A T H S ********** //
 const paths = {
 	src: {
-		html: `src/**/*.html`,
+		html: `src/*.html`,
+		htmls: `src/**/*.html`,
 		styles: `src/scss/**/*.scss`,
 		img: `src/images/**/*`,
 		scripts: `src/javascript/**/*.js`,
@@ -48,6 +50,7 @@ const html = async () => {
 			prefix: '@@',
 			basepath: '@file'
 		}))
+		.pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
 		.on('error', swallowError)
 		.pipe(gulp.dest(paths.build.html));
 }
@@ -109,7 +112,7 @@ const js = () =>
 
 const watch = () => {
 	gulp.watch(paths.src.styles, styles);
-	gulp.watch(paths.src.html, html);
+	gulp.watch(paths.src.htmls, html);
 	gulp.watch(paths.src.img, img);
 	gulp.watch(paths.src.scripts, js);
 

@@ -1,0 +1,33 @@
+.nav {
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	&__items {
+		display: flex;
+	}
+	
+	&__item {
+	}
+	
+	&__link {
+		display: block;
+		padding: 1rem 2rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1px;
+	}
+}
+
+.logo {
+	
+	width: 100px;
+	
+	&__image {
+	}
+}
+
+
+// media queries
+@import "./nav_mq";

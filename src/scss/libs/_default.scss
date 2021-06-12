@@ -1,0 +1,21 @@
+html, body {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+	font-family: $primary-font;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $primary-color;
+}
+
+body {
+	position: relative;
+}
+
+.container {
+	max-width: $max-width;
+	padding: 0 $container-padding;
+	margin: 0 auto;
+}

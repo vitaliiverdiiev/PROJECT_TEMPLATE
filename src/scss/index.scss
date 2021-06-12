@@ -1,0 +1,15 @@
+// libs
+@import "./libs/reset";
+@import "./libs/vars";
+@import "./libs/mixins";
+@import "./libs/default";
+
+// components 
+@import "./components/burger/burger";
+@import "./components/nav/nav";
+
+// sections
+// @import "./sections/header/header";
+
+// media queries
+// @import "./sections/header_mq.scss";
