@@ -1,9 +1,6 @@
 .main {
 	height: 80vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	@include d-flex(column);
 	padding: 0 30px;
 
 	&__title {
@@ -16,11 +13,11 @@
 }
 
 .reminder {
-
+	
 	&__items {
 		list-style-type: decimal;
 	}
-
+	
 	&__item {
 		letter-spacing: 1px;
 		font-size: 16px;
@@ -30,3 +27,6 @@
 		}
 	}
 }
+
+// media queries
+@import "./main_mq";

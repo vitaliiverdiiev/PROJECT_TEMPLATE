@@ -1,0 +1,58 @@
+@mixin pseudo-icon($size, $image, $x, $x-margin, $y, $y-margin) {
+	content: "";
+	position: absolute;
+	width: $size;
+	height: $size;
+	background-image: $image;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	#{$x}: $x-margin;
+	#{$y}: $y-margin;
+	transform: translateY(-$y-margin);
+}
+
+@mixin pseudo-line ($w-size, $h-size, $color, $x, $x-margin, $y, $y-margin, $tt) {
+	content: "";
+	position: absolute;
+	width: $w-size;
+	height: $h-size;
+	#{$x}: $x-margin;
+	#{$y}: $y-margin;
+	background-color: $color;
+	@if $tt == true {
+		transform: translateY(-$y-margin);
+	}
+}
+
+@mixin container($max-width, $padding) {
+	max-width: $max-width;
+	padding: $container-padding;
+	margin: 0 auto;
+}
+
+@mixin d-flex($fd: row, $jc: center, $ai: center,) {
+	display: flex;
+	flex-direction: $fd;
+	justify-content: $jc;
+	align-items: $ai;
+}
+
+@mixin scroll-bar($class, $scrollbar-size, $scrollbar-track, $scrollbar-thumb, $scrollbar-thumb-hover: $scrollbar-thumb) {
+
+	#{$class}::-webkit-scrollbar {
+		width: $scrollbar-size;
+	}
+
+	#{$class}::-webkit-scrollbar-track {
+		background: $scrollbar-track;
+	}
+
+	#{$class}::-webkit-scrollbar-thumb {
+		background: $scrollbar-thumb;
+	}
+
+	#{$class}::-webkit-scrollbar-thumb:hover {
+		background: $scrollbar-thumb-hover;
+	}
+}

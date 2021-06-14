@@ -1,5 +1,6 @@
 .footer {
-	
+	padding: 1rem;
+
 	&__inner {
 		display: flex;
 		justify-content: center;
@@ -16,19 +17,5 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.footer {
-	
-		&__inner {
-			flex-direction: column;
-		}
-	
-		&__text {
-		}
-	
-		b {
-			font-weight: bold;
-		}
-	}
-	
-}
+// media queries
+@import "./footer_mq";
