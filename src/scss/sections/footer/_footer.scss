@@ -1,0 +1,34 @@
+.footer {
+	
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__text {
+		line-height: 2;
+	}
+
+	b {
+		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+	
+		&__inner {
+			flex-direction: column;
+		}
+	
+		&__text {
+		}
+	
+		b {
+			font-weight: bold;
+		}
+	}
+	
+}

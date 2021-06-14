@@ -31,6 +31,7 @@ const paths = {
 		html: `src/*.html`,
 		htmls: `src/**/*.html`,
 		styles: `src/scss/**/*.scss`,
+		fonts: `src/fonts/*.woff`,
 		img: `src/images/**/*`,
 		scripts: `src/javascript/**/*.js`,
 	},
@@ -38,6 +39,7 @@ const paths = {
 		root: 'build/',
 		html: `build/`,
 		styles: `build/styles`,
+		fonts: `build/fonts`,
 		img: `build/images`,
 		scripts: `build/scripts`,
 	},
@@ -96,6 +98,13 @@ const img = () =>
 		)
 		.pipe(gulp.dest(paths.build.img));
 
+// ********** F O N T S ********** //
+
+const fonts = () =>
+	gulp
+		.src(paths.src.fonts)
+		.pipe(gulp.dest(paths.build.fonts));
+
 // ********** J A V A S C R I P T ********** //
 
 // const jsFiles = ['./src/js/index.js', './src/js/burger.js', './src/js/animation.js'];
@@ -114,6 +123,7 @@ const watch = () => {
 	gulp.watch(paths.src.styles, styles);
 	gulp.watch(paths.src.htmls, html);
 	gulp.watch(paths.src.img, img);
+	gulp.watch(paths.src.fonts, fonts);
 	gulp.watch(paths.src.scripts, js);
 
 	if (isSync) {
@@ -138,13 +148,14 @@ const clean = () => del(`${paths.build.root}*`);
 gulp.task('clean', clean);
 gulp.task('html', html);
 gulp.task('styles', styles);
+gulp.task('fonts', fonts);
 gulp.task('img', img);
 gulp.task('js', js);
 
 // ********** F I N A L - T A S K S ********** //
 const build = gulp.series(
 	'clean',
-	gulp.parallel('html', 'styles', 'img', 'js'),
+	gulp.parallel('html', 'styles', 'fonts', 'img', 'js'),
 );
 
 gulp.task('build', build);

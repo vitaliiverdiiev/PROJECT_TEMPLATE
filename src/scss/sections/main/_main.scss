@@ -1,0 +1,32 @@
+.main {
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 30px;
+
+	&__title {
+		font-size: 48px;
+		line-height: 1.5;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+}
+
+.reminder {
+
+	&__items {
+		list-style-type: decimal;
+	}
+
+	&__item {
+		letter-spacing: 1px;
+		font-size: 16px;
+		
+		& + & {
+			margin-top: 1rem;
+		}
+	}
+}

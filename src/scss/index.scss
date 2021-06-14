@@ -1,5 +1,6 @@
 // libs
 @import "./libs/reset";
+@import "./libs/fonts";
 @import "./libs/vars";
 @import "./libs/mixins";
 @import "./libs/default";
@@ -9,7 +10,10 @@
 @import "./components/nav/nav";
 
 // sections
-// @import "./sections/header/header";
+@import "./sections/header/header";
+@import "./sections/main/main";
+@import "./sections/footer/footer";
 
 // media queries
 // @import "./sections/header_mq.scss";
+@import "./sections/main/main_mq";
